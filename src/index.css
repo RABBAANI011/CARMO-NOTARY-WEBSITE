@@ -2,76 +2,44 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* =========================================================
-   CARMO NOTARY — OFFICIAL BRAND COLOR SYSTEM
-   Based on the CARMO NOTARY logo
+   CARMO NOTARY — WEBSITE-WIDE BRAND SYSTEM
+   Palette selected from the approved earthy brown / sage set.
+   All pages use this same color language and hero sizing.
    ========================================================= */
 
 :root {
-  /* -------------------------------------------------------
-     BRAND COLORS
-     ------------------------------------------------------- */
-
-  /* Main blue from the CARMO logo */
-  --carmo-blue: #4591dd;
-
-  /* Gold from the CARMO logo */
-  --carmo-gold: #d5a744;
-
-  /* Green from the CARMO logo */
-  --carmo-green: #3b634b;
-
-  /* Derived dark blue for professional backgrounds */
-  --carmo-dark-blue: #102f5c;
-
-  /* Derived deeper navy */
-  --carmo-navy: #0a2345;
-
-  /* Light versions of the logo colors */
-  --carmo-light-blue: #eaf4ff;
-  --carmo-light-gold: #fbf5e8;
-  --carmo-light-green: #eef6f1;
-
-  /* -------------------------------------------------------
-     BASIC COLORS
-     ------------------------------------------------------- */
+  --carmo-brown-950: #382b22;
+  --carmo-brown-900: #4a2f1d;
+  --carmo-brown-800: #58300e;
+  --carmo-brown-700: #7f4f24;
+  --carmo-brown-600: #936639;
+  --carmo-tan-500: #a68a64;
+  --carmo-tan-300: #b6ad90;
+  --carmo-cream-200: #c2c5aa;
+  --carmo-sage-300: #a4ac86;
+  --carmo-olive-500: #656d4a;
+  --carmo-olive-700: #333d29;
 
   --color-white: #ffffff;
-  --color-black: #111827;
+  --color-black: #171a15;
 
-  --color-background: #f8fafc;
-  --color-surface: #ffffff;
-  --color-surface-soft: #f4f8fc;
-
-  --color-text-primary: #102f5c;
-  --color-text-secondary: #52677f;
-  --color-text-muted: #718096;
-
-  --color-border: #d9e3ee;
-
-  /* -------------------------------------------------------
-     PAGE SYSTEM
-     ------------------------------------------------------- */
-
-  --page-background: #ffffff;
-  --section-background: #f8fafc;
+  --page-background: #fbfaf6;
+  --section-background: #f2f0e8;
   --card-background: #ffffff;
+  --surface-soft: #ebe9df;
 
-  /* -------------------------------------------------------
-     BUTTONS
-     ------------------------------------------------------- */
+  --color-text-primary: #382b22;
+  --color-text-secondary: #5d6254;
+  --color-text-muted: #7b806f;
+  --color-border: #d8d5c7;
 
-  --button-primary: #4591dd;
-  --button-primary-hover: #102f5c;
-
+  --button-primary: #58300e;
+  --button-primary-hover: #382b22;
   --button-secondary: #ffffff;
-  --button-secondary-border: #4591dd;
+  --button-secondary-border: #7f4f24;
 
-  /* -------------------------------------------------------
-     SHADOWS
-     ------------------------------------------------------- */
-
-  --shadow-soft: 0 8px 30px rgba(16, 47, 92, 0.08);
-  --shadow-card: 0 10px 35px rgba(16, 47, 92, 0.1);
+  --shadow-soft: 0 8px 30px rgba(56, 43, 34, 0.08);
+  --shadow-card: 0 12px 35px rgba(56, 43, 34, 0.12);
 }
 
 /* =========================================================
@@ -79,49 +47,23 @@
    ========================================================= */
 
 .dark {
-  /* Keep original logo colors */
-  --carmo-blue: #4591dd;
-  --carmo-gold: #d5a744;
-  --carmo-green: #3b634b;
+  --page-background: #20251c;
+  --section-background: #293021;
+  --card-background: #303827;
+  --surface-soft: #394230;
 
-  /* Dark backgrounds */
-  --carmo-dark-blue: #081d39;
-  --carmo-navy: #06172e;
+  --color-text-primary: #f5f1e7;
+  --color-text-secondary: #d1d0c3;
+  --color-text-muted: #aeb09f;
+  --color-border: #505846;
 
-  /* Dark-mode light accents */
-  --carmo-light-blue: #132f52;
-  --carmo-light-gold: #3a301d;
-  --carmo-light-green: #1c3025;
+  --button-primary: #a68a64;
+  --button-primary-hover: #c2c5aa;
+  --button-secondary: #303827;
+  --button-secondary-border: #a4ac86;
 
-  /* Basic colors */
-  --color-white: #ffffff;
-  --color-black: #ffffff;
-
-  --color-background: #06172e;
-  --color-surface: #0b2445;
-  --color-surface-soft: #102f54;
-
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #c5d4e6;
-  --color-text-muted: #9eb1c8;
-
-  --color-border: #294564;
-
-  /* Page system */
-  --page-background: #06172e;
-  --section-background: #081d39;
-  --card-background: #0b2445;
-
-  /* Buttons */
-  --button-primary: #4591dd;
-  --button-primary-hover: #ffffff;
-
-  --button-secondary: #0b2445;
-  --button-secondary-border: #4591dd;
-
-  /* Shadows */
   --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.2);
-  --shadow-card: 0 10px 35px rgba(0, 0, 0, 0.25);
+  --shadow-card: 0 12px 35px rgba(0, 0, 0, 0.28);
 }
 
 /* =========================================================
@@ -141,24 +83,11 @@ body {
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;
-
   background: var(--page-background);
   color: var(--color-text-secondary);
-
-  font-family:
-    Inter,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
-  transition:
-    background-color 0.25s ease,
-    color 0.25s ease;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
-
-/* =========================================================
-   HEADINGS
-   ========================================================= */
 
 h1,
 h2,
@@ -167,28 +96,13 @@ h4,
 h5,
 h6 {
   margin: 0;
-
-  font-family:
-    "Plus Jakarta Sans",
-    Inter,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family: "Plus Jakarta Sans", Inter, "Segoe UI", Arial, sans-serif;
   color: var(--color-text-primary);
 }
-
-/* =========================================================
-   LINKS
-   ========================================================= */
 
 a {
   text-decoration: none;
 }
-
-/* =========================================================
-   FORM ELEMENTS
-   ========================================================= */
 
 button,
 input,
@@ -205,12 +119,8 @@ select {
 
 input::placeholder,
 textarea::placeholder {
-  color: #94a3b8;
+  color: #8a8c7e;
 }
-
-/* =========================================================
-   DARK MODE — FORM ELEMENTS
-   ========================================================= */
 
 .dark input,
 .dark textarea,
@@ -222,7 +132,7 @@ textarea::placeholder {
 
 .dark input::placeholder,
 .dark textarea::placeholder {
-  color: #8195ae;
+  color: #a5a999;
 }
 
 .dark option {
@@ -231,13 +141,23 @@ textarea::placeholder {
 }
 
 /* =========================================================
-   RESPONSIVE TYPOGRAPHY
+   STANDARD HERO SYSTEM
+   Home hero is the reference size for every page.
    ========================================================= */
+
+.carmo-hero {
+  min-height: 500px;
+}
 
 .carmo-hero-title {
   font-size: clamp(2.25rem, 4vw, 3.75rem);
   line-height: 1.08;
   letter-spacing: -0.035em;
+}
+
+.carmo-hero-copy {
+  font-size: clamp(0.95rem, 1.2vw, 1.125rem);
+  line-height: 1.75;
 }
 
 .carmo-section-title {
@@ -246,20 +166,28 @@ textarea::placeholder {
   letter-spacing: -0.025em;
 }
 
-.carmo-body {
-  font-size: clamp(0.95rem, 1.2vw, 1.125rem);
-  line-height: 1.75;
+.carmo-page-image {
+  height: 330px;
 }
 
 /* =========================================================
-   MOBILE TYPOGRAPHY
+   RESPONSIVE TYPOGRAPHY
    ========================================================= */
 
 @media (max-width: 640px) {
+  .carmo-hero {
+    min-height: auto;
+  }
+
   .carmo-hero-title {
     font-size: clamp(2rem, 9vw, 2.6rem);
     line-height: 1.1;
     letter-spacing: -0.025em;
+  }
+
+  .carmo-hero-copy {
+    font-size: 0.95rem;
+    line-height: 1.7;
   }
 
   .carmo-section-title {
@@ -267,15 +195,10 @@ textarea::placeholder {
     line-height: 1.18;
   }
 
-  .carmo-body {
-    font-size: 0.95rem;
-    line-height: 1.7;
+  .carmo-page-image {
+    height: 330px;
   }
 }
-
-/* =========================================================
-   TABLET TYPOGRAPHY
-   ========================================================= */
 
 @media (min-width: 641px) and (max-width: 1024px) {
   .carmo-hero-title {
@@ -285,30 +208,26 @@ textarea::placeholder {
   .carmo-section-title {
     font-size: clamp(2rem, 4vw, 2.5rem);
   }
+
+  .carmo-page-image {
+    height: 400px;
+  }
 }
 
-/* =========================================================
-   DESKTOP TYPOGRAPHY
-   ========================================================= */
-
 @media (min-width: 1025px) {
-  .carmo-hero-title {
-    font-size: clamp(3rem, 4vw, 3.75rem);
+  .carmo-page-image {
+    height: 400px;
   }
 }
 
 /* =========================================================
-   SELECTION
+   ACCESSIBILITY
    ========================================================= */
 
 ::selection {
-  background: var(--carmo-blue);
+  background: var(--carmo-olive-500);
   color: #ffffff;
 }
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
 
 ::-webkit-scrollbar {
   width: 9px;
@@ -319,30 +238,22 @@ textarea::placeholder {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--carmo-blue);
+  background: var(--carmo-olive-500);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--carmo-dark-blue);
+  background: var(--carmo-olive-700);
 }
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
 
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 3px solid rgba(69, 145, 221, 0.35);
+  outline: 3px solid rgba(164, 172, 134, 0.55);
   outline-offset: 3px;
 }
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   html {
