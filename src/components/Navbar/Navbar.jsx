@@ -46,185 +46,125 @@ function Navbar() {
   }, []);
 
   return (
-    <>
-      {/* =====================================================
-          FIXED HEADER
-          ===================================================== */}
+    <header
+      className="fixed left-0 right-0 top-0 z-[9999] border-b border-[var(--color-border)] bg-[var(--card-background)] shadow-[0_4px_20px_rgba(56,43,34,0.10)]"
+      style={{ height: "78px" }}
+    >
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <Link
+          to="/"
+          onClick={() => setMenuOpen(false)}
+          className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white"
+          aria-label="CARMO NOTARY"
+        >
+          <img
+            src={logo}
+            alt="CARMO NOTARY"
+            className="h-full w-full object-contain"
+          />
+        </Link>
 
-      <header
-        className={
-          darkMode
-            ? "fixed left-0 right-0 top-0 z-[9999] border-b border-[#294564] bg-[#102F5C] shadow-[0_4px_20px_rgba(0,0,0,0.25)]"
-            : "fixed left-0 right-0 top-0 z-[9999] border-b border-[#D9E3EE] bg-white shadow-[0_4px_20px_rgba(16,47,92,0.10)]"
-        }
-        style={{
-          height: "78px",
-        }}
-      >
-        <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
+        <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) =>
+                `relative whitespace-nowrap py-2 text-sm font-semibold transition-colors duration-200 ${
+                  isActive
+                    ? "text-[var(--carmo-brown-700)] dark:text-[var(--carmo-tan-300)]"
+                    : "text-[var(--color-text-primary)] hover:text-[var(--carmo-brown-700)]"
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {link.name}
+                  <span
+                    className={`absolute -bottom-[19px] left-0 right-0 mx-auto h-[3px] rounded-full bg-[var(--carmo-brown-700)] transition-all duration-200 dark:bg-[var(--carmo-sage-300)] ${
+                      isActive
+                        ? "scale-x-100 opacity-100"
+                        : "scale-x-0 opacity-0"
+                    }`}
+                  />
+                </>
+              )}
+            </NavLink>
+          ))}
+        </nav>
 
-          {/* =================================================
-              LOGO
-              ================================================= */}
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              setDarkMode((current) => !current);
+              setMenuOpen(false);
+            }}
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--surface-soft)] text-[var(--carmo-olive-700)] transition hover:border-[var(--carmo-brown-700)] hover:bg-[var(--carmo-cream-200)] dark:text-[var(--carmo-tan-300)] dark:hover:border-[var(--carmo-sage-300)] dark:hover:bg-[var(--surface-soft)]"
+            aria-label="Beddel muuqaalka"
+            title={darkMode ? "Light Mode" : "Dark Mode"}
+          >
+            {darkMode ? (
+              <span className="text-xl leading-none">☀</span>
+            ) : (
+              <span className="text-xl leading-none">☾</span>
+            )}
+          </button>
 
           <Link
-            to="/"
-            onClick={() => setMenuOpen(false)}
-            className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white"
-            aria-label="CARMO NOTARY"
+            to="/book-appointment"
+            className="hidden rounded-lg bg-[var(--button-primary)] px-5 py-3 text-sm font-bold text-white transition hover:bg-[var(--button-primary-hover)] lg:block xl:px-6"
           >
-            <img
-              src={logo}
-              alt="CARMO NOTARY"
-              className="h-full w-full object-contain"
-            />
+            Ballan Qabso
           </Link>
 
-          {/* =================================================
-              DESKTOP NAVIGATION
-              ================================================= */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((current) => !current)}
+            className="flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--color-border)] bg-[var(--surface-soft)] text-[var(--color-text-primary)] transition hover:border-[var(--carmo-brown-700)] lg:hidden"
+            aria-label="Fur menu"
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? (
+              <span className="text-2xl leading-none">×</span>
+            ) : (
+              <span className="text-xl leading-none">☰</span>
+            )}
+          </button>
+        </div>
+      </div>
 
-          <nav className="hidden items-center gap-5 lg:flex xl:gap-7">
+      {menuOpen && (
+        <div className="border-t border-[var(--color-border)] bg-[var(--card-background)] lg:hidden">
+          <nav className="mx-auto flex max-w-7xl flex-col px-5 py-4 sm:px-6">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
                 to={link.path}
+                onClick={() => setMenuOpen(false)}
                 className={({ isActive }) =>
-                  `relative whitespace-nowrap py-2 text-sm font-semibold transition-colors duration-200 ${
+                  `border-b border-[var(--color-border)] px-2 py-4 text-sm font-semibold transition-colors ${
                     isActive
-                      ? "text-[#4591DD]"
-                      : darkMode
-                        ? "text-white hover:text-[#B7D7FF]"
-                        : "text-[#102F5C] hover:text-[#4591DD]"
+                      ? "text-[var(--carmo-brown-700)] dark:text-[var(--carmo-sage-300)]"
+                      : "text-[var(--color-text-primary)] hover:text-[var(--carmo-brown-700)]"
                   }`
                 }
               >
-                {({ isActive }) => (
-                  <>
-                    {link.name}
-
-                    <span
-                      className={`absolute -bottom-[19px] left-0 right-0 mx-auto h-[3px] rounded-full bg-[#4591DD] transition-all duration-200 ${
-                        isActive
-                          ? "scale-x-100 opacity-100"
-                          : "scale-x-0 opacity-0"
-                      }`}
-                    />
-                  </>
-                )}
+                {link.name}
               </NavLink>
             ))}
-          </nav>
-
-          {/* =================================================
-              RIGHT SIDE
-              ================================================= */}
-
-          <div className="flex items-center gap-3">
-
-            {/* DARK MODE BUTTON */}
-
-            <button
-              type="button"
-              onClick={() => {
-                setDarkMode((current) => !current);
-                setMenuOpen(false);
-              }}
-              className={
-                darkMode
-                  ? "flex h-11 w-11 items-center justify-center rounded-full border border-[#48698D] bg-[#0B2445] text-[#D5A744] transition hover:border-[#B7D7FF] hover:bg-[#163B63]"
-                  : "flex h-11 w-11 items-center justify-center rounded-full border border-[#D9E3EE] bg-[#F8FAFC] text-[#102F5C] transition hover:border-[#4591DD] hover:bg-[#EAF4FF]"
-              }
-              aria-label="Beddel muuqaalka"
-              title={darkMode ? "Light Mode" : "Dark Mode"}
-            >
-              {darkMode ? (
-                <span className="text-xl leading-none">☀</span>
-              ) : (
-                <span className="text-xl leading-none">☾</span>
-              )}
-            </button>
-
-            {/* DESKTOP CTA */}
 
             <Link
               to="/book-appointment"
-              className="hidden rounded-lg bg-[#4591DD] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0A2345] lg:block xl:px-6"
+              onClick={() => setMenuOpen(false)}
+              className="mt-4 flex items-center justify-center rounded-lg bg-[var(--button-primary)] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[var(--button-primary-hover)]"
             >
               Ballan Qabso
             </Link>
-
-            {/* MOBILE BUTTON */}
-
-            <button
-              type="button"
-              onClick={() => setMenuOpen((current) => !current)}
-              className={
-                darkMode
-                  ? "flex h-11 w-11 items-center justify-center rounded-lg border border-[#48698D] bg-[#0B2445] text-white transition hover:border-[#B7D7FF] lg:hidden"
-                  : "flex h-11 w-11 items-center justify-center rounded-lg border border-[#D9E3EE] bg-[#F8FAFC] text-[#102F5C] transition hover:border-[#4591DD] lg:hidden"
-              }
-              aria-label="Fur menu"
-              aria-expanded={menuOpen}
-            >
-              {menuOpen ? (
-                <span className="text-2xl leading-none">×</span>
-              ) : (
-                <span className="text-xl leading-none">☰</span>
-              )}
-            </button>
-          </div>
+          </nav>
         </div>
-
-        {/* ===================================================
-            MOBILE MENU
-            =================================================== */}
-
-        {menuOpen && (
-          <div
-            className={
-              darkMode
-                ? "border-t border-[#294564] bg-[#0B2445] lg:hidden"
-                : "border-t border-[#D9E3EE] bg-white lg:hidden"
-            }
-          >
-            <nav className="mx-auto flex max-w-7xl flex-col px-5 py-4 sm:px-6">
-
-              {navLinks.map((link) => (
-                <NavLink
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `border-b px-2 py-4 text-sm font-semibold transition-colors ${
-                      darkMode
-                        ? "border-[#294564]"
-                        : "border-[#EEF2F6]"
-                    } ${
-                      isActive
-                        ? "text-[#4591DD]"
-                        : darkMode
-                          ? "text-white hover:text-[#B7D7FF]"
-                          : "text-[#102F5C] hover:text-[#4591DD]"
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-
-              <Link
-                to="/book-appointment"
-                onClick={() => setMenuOpen(false)}
-                className="mt-4 flex items-center justify-center rounded-lg bg-[#4591DD] px-5 py-3.5 text-sm font-bold text-white transition hover:bg-[#0A2345]"
-              >
-                Ballan Qabso
-              </Link>
-            </nav>
-          </div>
-        )}
-      </header>
-    </>
+      )}
+    </header>
   );
 }
 
