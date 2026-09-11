@@ -1,335 +1,575 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../components/LanguageContext";
 
-const Services = () => {
-  const { language } = useLanguage();
-
-  const isSomali = language === "SO";
-
-  const content = {
-    en: {
-      eyebrow: "PROFESSIONAL NOTARY SERVICES",
-      title: "Services Designed Around",
-      accent: "Your Documents",
-      description:
-        "CARMO provides professional notary services for individuals and businesses, helping make document verification and notarization clear, secure, and convenient.",
-
-      services: [
-        {
-          number: "01",
-          title: "Personal Documents",
-          description:
-            "Professional notarization support for personal and individual documents that require verification, certification, or an official signature.",
-          items: [
-            "Personal agreements",
-            "Declarations and statements",
-            "Signature verification",
-            "Other personal documents",
-          ],
-        },
-        {
-          number: "02",
-          title: "Business Documents",
-          description:
-            "Notary support for businesses and organizations handling important commercial, administrative, and corporate documentation.",
-          items: [
-            "Business agreements",
-            "Company documents",
-            "Commercial documents",
-            "Authorized signatures",
-          ],
-        },
-        {
-          number: "03",
-          title: "Document Verification",
-          description:
-            "Careful review and verification support for documents where authenticity, signatures, or required information need additional attention.",
-          items: [
-            "Document review",
-            "Signature verification",
-            "Information checking",
-            "Verification guidance",
-          ],
-        },
-        {
-          number: "04",
-          title: "Certification Support",
-          description:
-            "Guidance for documents that require certification or formal notary handling based on their intended use.",
-          items: [
-            "Certification guidance",
-            "Required document checks",
-            "Formal document handling",
-            "Service preparation",
-          ],
-        },
-      ],
-
-      processTitle: "The right service starts with the right document",
-      processDescription:
-        "Not every document requires the same type of notary service. CARMO helps you understand what is needed before your appointment so the process is straightforward.",
-
-      points: [
-        {
-          title: "Tell us what you need",
-          description:
-            "Share the type of document and the purpose of your request.",
-        },
-        {
-          title: "Prepare your documents",
-          description:
-            "Bring the required documents and identification for your appointment.",
-        },
-        {
-          title: "Complete the service",
-          description:
-            "Our professional team handles the requested notarization or verification process.",
-        },
-      ],
-
-      ctaTitle: "Not sure which service you need?",
-      ctaDescription:
-        "Contact CARMO or book an appointment and tell us what type of document you are working with. We can guide you toward the appropriate service.",
-      book: "Book an Appointment",
-      contact: "Contact CARMO",
-    },
-
-    so: {
-      eyebrow: "ADEEGYO NOTARY OO XIRFAD LEH",
-      title: "Adeegyo Loogu Talagalay",
-      accent: "Dukumentiyadaada",
-      description:
-        "CARMO waxay bixisaa adeegyo notary oo xirfad leh oo loogu talagalay dadka iyo ganacsiyada, iyadoo fududaynaysa hubinta iyo notarization-ka dukumentiyada.",
-
-      services: [
-        {
-          number: "01",
-          title: "Dukumentiyada Shaqsiga",
-          description:
-            "Taageero notary oo xirfad leh oo loogu talagalay dukumentiyada shaqsiga ee u baahan xaqiijin, shahaado ama saxiix rasmi ah.",
-          items: [
-            "Heshiisyada shaqsiga",
-            "Bayaanno iyo qoraallo",
-            "Xaqiijinta saxiixa",
-            "Dukumentiyo kale oo shaqsiyeed",
-          ],
-        },
-        {
-          number: "02",
-          title: "Dukumentiyada Ganacsiga",
-          description:
-            "Adeeg notary oo loogu talagalay shirkadaha iyo hay'adaha maareeya dukumentiyada ganacsi, maamul iyo shirkadeed.",
-          items: [
-            "Heshiisyada ganacsiga",
-            "Dukumentiyada shirkadda",
-            "Dukumentiyada ganacsiga",
-            "Saxiixyada la oggol yahay",
-          ],
-        },
-        {
-          number: "03",
-          title: "Xaqiijinta Dukumentiyada",
-          description:
-            "Dib-u-eegis iyo taageero xaqiijin ah oo loogu talagalay dukumentiyada u baahan in la hubiyo saxnimadooda ama saxiixyadooda.",
-          items: [
-            "Dib-u-eegista dukumentiga",
-            "Xaqiijinta saxiixa",
-            "Hubinta macluumaadka",
-            "Hagitaan ku saabsan xaqiijinta",
-          ],
-        },
-        {
-          number: "04",
-          title: "Taageerada Shahaadaynta",
-          description:
-            "Hagitaan ku saabsan dukumentiyada u baahan shahaado ama maareyn rasmi ah oo notary ah iyadoo lagu salaynayo ujeeddada dukumentiga.",
-          items: [
-            "Hagitaan shahaadayneed",
-            "Hubinta dukumentiyada loo baahan yahay",
-            "Maareynta dukumentiyada rasmiga ah",
-            "Diyaarinta adeegga",
-          ],
-        },
-      ],
-
-      processTitle: "Adeegga saxda ahi wuxuu ka bilaabmaa dukumentiga saxda ah",
-      processDescription:
-        "Dukumenti kasta uma baahna adeeg notary oo isku mid ah. CARMO waxay kaa caawinaysaa fahamka waxa loo baahan yahay ka hor ballantaada si habku u noqdo mid fudud.",
-
-      points: [
-        {
-          title: "Noo sheeg waxa aad u baahan tahay",
-          description:
-            "Noo sheeg nooca dukumentiga iyo ujeeddada codsigaaga.",
-        },
-        {
-          title: "Diyaari dukumentiyadaada",
-          description:
-            "Keen dukumentiyada iyo aqoonsiga loo baahan yahay marka aad ballanta timaaddo.",
-        },
-        {
-          title: "Dhammaystir adeegga",
-          description:
-            "Kooxdayada xirfadlayaasha ahi waxay maareynayaan notarization-ka ama xaqiijinta aad codsatay.",
-        },
-      ],
-
-      ctaTitle: "Ma hubtid adeegga aad u baahan tahay?",
-      ctaDescription:
-        "La xiriir CARMO ama samee ballan oo noo sheeg nooca dukumentiga aad hayso. Waxaan kaa caawin karnaa inaad hesho adeegga ku habboon.",
-      book: "Samee Ballan",
-      contact: "La Xiriir CARMO",
-    },
-  };
-
-  const text = isSomali ? content.so : content.en;
-
+function Services() {
   return (
-    <main className="min-h-screen bg-[var(--color-background)] text-[var(--color-text)]">
-      {/* Hero */}
-      <section className="border-b border-[var(--color-border)]">
-        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:px-12 lg:py-24">
-          <div className="max-w-3xl">
-            <span className="inline-flex rounded-full border border-[var(--color-secondary)]/40 bg-[var(--color-secondary)]/10 px-4 py-2 text-xs font-semibold tracking-[0.18em] text-[var(--color-secondary)]">
-              {text.eyebrow}
-            </span>
+    <main className="overflow-hidden bg-[var(--color-background)]">
 
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-              {text.title}{" "}
-              <span className="text-[var(--color-secondary)]">
-                {text.accent}
+      {/* =====================================================
+          PAGE HERO
+      ====================================================== */}
+      <section className="relative overflow-hidden bg-[#063525]">
+
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#e5bd52]/10" />
+        <div className="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#3f806b]/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+
+          <div className="max-w-3xl">
+
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px w-10 bg-[#e5bd52]" />
+
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e5bd52]">
+                Our Services
+              </p>
+            </div>
+
+            <h1 className="font-serif text-5xl font-semibold leading-[1.02] tracking-[-0.025em] text-white sm:text-6xl lg:text-7xl">
+              Notary Services
+              <br />
+              <span className="text-[#e5bd52]">
+                You Can Rely On
               </span>
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--color-text-muted)] sm:text-lg">
-              {text.description}
+            <p className="mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+              Professional notary services for individuals, families,
+              organizations, and businesses, delivered through a clear
+              and dependable process.
             </p>
+
           </div>
+
         </div>
       </section>
 
-      {/* Services */}
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="grid gap-6 md:grid-cols-2">
-          {text.services.map((service) => (
-            <article
-              key={service.number}
-              className="group rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8"
-            >
-              <div className="flex items-start justify-between gap-5">
-                <span className="text-sm font-semibold text-[var(--color-secondary)]">
-                  {service.number}
+
+      {/* =====================================================
+          INTRODUCTION
+      ====================================================== */}
+      <section className="bg-[var(--color-background)] py-20 sm:py-24 lg:py-28">
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+
+            <div>
+
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-secondary)]">
+                What We Provide
+              </p>
+
+              <h2 className="mt-4 max-w-lg font-serif text-4xl font-semibold leading-[1.08] text-[var(--color-primary-dark)] sm:text-5xl">
+                Professional Support
+                <br />
+                for Important
+                <br />
+                <span className="text-[var(--color-secondary)]">
+                  Documents
+                </span>
+              </h2>
+
+            </div>
+
+            <div>
+
+              <p className="text-lg leading-8 text-[var(--color-text)]">
+                CARMO provides notary services designed to help clients
+                handle important documents with greater clarity and
+                confidence.
+              </p>
+
+              <p className="mt-5 text-base leading-8 text-[var(--color-text-muted)]">
+                Whether you need assistance with a personal document,
+                business paperwork, an authorization, or another document
+                requiring notarization, our goal is to make the process
+                straightforward and professional.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* =====================================================
+          SERVICE CATEGORIES
+      ====================================================== */}
+      <section className="bg-[#f4f0e6] py-20 sm:py-24 lg:py-28">
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+
+          <div className="max-w-2xl">
+
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#b88b24]">
+              Service Categories
+            </p>
+
+            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight text-[#174f40] sm:text-5xl">
+              Services Built Around
+              <br />
+              <span className="text-[#b88b24]">
+                Your Requirements
+              </span>
+            </h2>
+
+          </div>
+
+
+          <div className="mt-14 grid gap-5 md:grid-cols-2">
+
+            {/* =================================================
+                PERSONAL DOCUMENTS
+            ================================================== */}
+            <article className="group rounded-2xl border border-[#d9d1c0] bg-[#faf8f2] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_50px_rgba(23,79,64,0.10)] sm:p-10">
+
+              <div className="flex items-start justify-between">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#174f40] text-[#e5bd52] transition-transform duration-300 group-hover:scale-110">
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  >
+                    <circle cx="12" cy="8" r="3" />
+                    <path d="M5 21c.8-4.2 3.1-6.5 7-6.5s6.2 2.3 7 6.5" />
+                  </svg>
+
+                </div>
+
+                <span className="font-serif text-5xl text-[#174f40]/10">
+                  01
                 </span>
 
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-primary)] transition-all duration-300 group-hover:border-[var(--color-secondary)] group-hover:bg-[var(--color-secondary)] group-hover:text-white">
-                  →
-                </span>
               </div>
 
-              <h2 className="mt-7 text-2xl font-semibold">
-                {service.title}
-              </h2>
+              <h3 className="mt-8 font-serif text-3xl font-semibold text-[#174f40]">
+                Personal Documents
+              </h3>
 
-              <p className="mt-4 text-sm leading-6 text-[var(--color-text-muted)]">
-                {service.description}
+              <p className="mt-4 max-w-xl text-sm leading-7 text-[#64746e]">
+                Notary assistance for individuals handling important
+                personal documentation and formal requirements.
               </p>
 
-              <ul className="mt-7 space-y-3 border-t border-[var(--color-border)] pt-6">
-                {service.items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 text-sm text-[var(--color-text-muted)]"
-                  >
-                    <span className="mt-1 text-[var(--color-secondary)]">
-                      ✓
-                    </span>
-                    <span>{item}</span>
+              <div className="mt-7 border-t border-[#d9d1c0] pt-6">
+
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b88b24]">
+                  Suitable For
+                </p>
+
+                <ul className="mt-4 space-y-3 text-sm text-[#64746e]">
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Personal declarations
                   </li>
-                ))}
-              </ul>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Authorizations
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Important personal documents
+                  </li>
+
+                </ul>
+
+              </div>
+
             </article>
-          ))}
+
+
+            {/* =================================================
+                BUSINESS DOCUMENTS
+            ================================================== */}
+            <article className="group rounded-2xl border border-[#d9d1c0] bg-[#faf8f2] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_50px_rgba(23,79,64,0.10)] sm:p-10">
+
+              <div className="flex items-start justify-between">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#174f40] text-[#e5bd52] transition-transform duration-300 group-hover:scale-110">
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  >
+                    <path d="M4 21V8l8-5 8 5v13" />
+                    <path d="M8 21v-7h8v7" />
+                    <path d="M9 10h1M14 10h1" />
+                  </svg>
+
+                </div>
+
+                <span className="font-serif text-5xl text-[#174f40]/10">
+                  02
+                </span>
+
+              </div>
+
+              <h3 className="mt-8 font-serif text-3xl font-semibold text-[#174f40]">
+                Business Documents
+              </h3>
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-[#64746e]">
+                Professional notary support for businesses, organizations,
+                and people handling business-related documentation.
+              </p>
+
+              <div className="mt-7 border-t border-[#d9d1c0] pt-6">
+
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b88b24]">
+                  Suitable For
+                </p>
+
+                <ul className="mt-4 space-y-3 text-sm text-[#64746e]">
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Business agreements
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Business authorizations
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Official business documentation
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </article>
+
+
+            {/* =================================================
+                LEGAL & OFFICIAL DOCUMENTS
+            ================================================== */}
+            <article className="group rounded-2xl border border-[#d9d1c0] bg-[#faf8f2] p-8 transition-all duration-500 hover:-translate-y-2 hover:bg-white hover:shadow-[0_20px_50px_rgba(23,79,64,0.10)] sm:p-10">
+
+              <div className="flex items-start justify-between">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#174f40] text-[#e5bd52] transition-transform duration-300 group-hover:scale-110">
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  >
+                    <path d="M6 2h9l4 4v16H6z" />
+                    <path d="M15 2v5h5" />
+                    <path d="M9 12h6M9 16h6" />
+                  </svg>
+
+                </div>
+
+                <span className="font-serif text-5xl text-[#174f40]/10">
+                  03
+                </span>
+
+              </div>
+
+              <h3 className="mt-8 font-serif text-3xl font-semibold text-[#174f40]">
+                Official Documents
+              </h3>
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-[#64746e]">
+                Professional assistance for documents that require
+                notarization as part of an official or formal process.
+              </p>
+
+              <div className="mt-7 border-t border-[#d9d1c0] pt-6">
+
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#b88b24]">
+                  Suitable For
+                </p>
+
+                <ul className="mt-4 space-y-3 text-sm text-[#64746e]">
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Formal declarations
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Official authorizations
+                  </li>
+
+                  <li className="flex items-center gap-3">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#b88b24]" />
+                    Other notarization requirements
+                  </li>
+
+                </ul>
+
+              </div>
+
+            </article>
+
+
+            {/* =================================================
+                CUSTOM REQUIREMENTS
+            ================================================== */}
+            <article className="group rounded-2xl bg-[#174f40] p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(23,79,64,0.20)] sm:p-10">
+
+              <div className="flex items-start justify-between">
+
+                <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#e5bd52] text-[#e5bd52] transition-transform duration-300 group-hover:scale-110">
+
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.7"
+                  >
+                    <path d="M12 3v18" />
+                    <path d="M3 12h18" />
+                    <circle cx="12" cy="12" r="8" />
+                  </svg>
+
+                </div>
+
+                <span className="font-serif text-5xl text-white/10">
+                  04
+                </span>
+
+              </div>
+
+              <h3 className="mt-8 font-serif text-3xl font-semibold text-white">
+                Specific Requirements
+              </h3>
+
+              <p className="mt-4 max-w-xl text-sm leading-7 text-white/60">
+                If you are unsure which service applies to your document,
+                contact CARMO and explain what you need. We can help you
+                understand the appropriate next step.
+              </p>
+
+              <div className="mt-7 border-t border-white/10 pt-6">
+
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e5bd52]">
+                  Need Guidance?
+                </p>
+
+                <p className="mt-4 text-sm leading-7 text-white/55">
+                  Tell us about your document or requirement and we can
+                  guide you toward the appropriate service.
+                </p>
+
+                <Link
+                  to="/contact"
+                  className="group/link mt-6 inline-flex items-center gap-3 text-sm font-semibold text-[#e5bd52]"
+                >
+                  Contact CARMO
+
+                  <span className="transition-transform duration-300 group-hover/link:translate-x-1">
+                    →
+                  </span>
+
+                </Link>
+
+              </div>
+
+            </article>
+
+          </div>
+
         </div>
       </section>
 
-      {/* Process Explanation */}
-      <section className="border-y border-[var(--color-border)] bg-[var(--color-surface)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+
+      {/* =====================================================
+          SERVICE PROCESS
+      ====================================================== */}
+      <section className="bg-[var(--color-background)] py-20 sm:py-24 lg:py-28">
+
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+
+          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.25fr]">
+
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--color-secondary)]">
-                CARMO
+
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--color-secondary)]">
+                Before Your Appointment
               </p>
 
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                {text.processTitle}
+              <h2 className="mt-4 max-w-md font-serif text-4xl font-semibold leading-[1.08] text-[var(--color-primary-dark)] sm:text-5xl">
+                Come Prepared.
+                <br />
+                Leave With
+                <br />
+                <span className="text-[var(--color-secondary)]">
+                  Confidence.
+                </span>
               </h2>
 
-              <p className="mt-5 text-base leading-7 text-[var(--color-text-muted)]">
-                {text.processDescription}
+              <p className="mt-6 max-w-md text-base leading-8 text-[var(--color-text-muted)]">
+                Preparing the necessary information before your appointment
+                can help make your notarization process smoother.
               </p>
+
             </div>
+
 
             <div className="space-y-4">
-              {text.points.map((point, index) => (
-                <div
-                  key={point.title}
-                  className="flex gap-5 rounded-2xl border border-[var(--color-border)] bg-[var(--color-background)] p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[var(--color-primary)] text-sm font-semibold text-white">
-                    0{index + 1}
-                  </div>
 
-                  <div>
-                    <h3 className="text-lg font-semibold">{point.title}</h3>
+              {/* Preparation 1 */}
+              <div className="flex gap-5 rounded-2xl border border-[var(--color-border)] bg-white p-6 sm:p-7">
 
-                    <p className="mt-2 text-sm leading-6 text-[var(--color-text-muted)]">
-                      {point.description}
-                    </p>
-                  </div>
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#174f40] font-serif text-sm font-semibold text-[#e5bd52]">
+                  01
                 </div>
-              ))}
+
+                <div>
+
+                  <h3 className="font-serif text-xl font-semibold text-[var(--color-primary-dark)]">
+                    Identify Your Document
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-[var(--color-text-muted)]">
+                    Know which document needs notarization and understand
+                    the purpose of your appointment.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* Preparation 2 */}
+              <div className="flex gap-5 rounded-2xl border border-[var(--color-border)] bg-white p-6 sm:p-7">
+
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#174f40] font-serif text-sm font-semibold text-[#e5bd52]">
+                  02
+                </div>
+
+                <div>
+
+                  <h3 className="font-serif text-xl font-semibold text-[var(--color-primary-dark)]">
+                    Prepare Required Information
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-[var(--color-text-muted)]">
+                    Bring the information and identification required for
+                    your specific notarization.
+                  </p>
+
+                </div>
+
+              </div>
+
+
+              {/* Preparation 3 */}
+              <div className="flex gap-5 rounded-2xl border border-[var(--color-border)] bg-white p-6 sm:p-7">
+
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#174f40] font-serif text-sm font-semibold text-[#e5bd52]">
+                  03
+                </div>
+
+                <div>
+
+                  <h3 className="font-serif text-xl font-semibold text-[var(--color-primary-dark)]">
+                    Attend Your Appointment
+                  </h3>
+
+                  <p className="mt-2 text-sm leading-7 text-[var(--color-text-muted)]">
+                    Meet with CARMO and complete the necessary verification
+                    and notarization steps.
+                  </p>
+
+                </div>
+
+              </div>
+
             </div>
+
           </div>
+
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12 lg:py-20">
-        <div className="rounded-3xl bg-[var(--color-primary)] px-7 py-12 text-white sm:px-10 lg:px-14">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                {text.ctaTitle}
-              </h2>
 
-              <p className="mt-4 text-base leading-7 text-white/75">
-                {text.ctaDescription}
-              </p>
-            </div>
+      {/* =====================================================
+          CTA
+      ====================================================== */}
+      <section className="relative overflow-hidden bg-[#063525] py-20 sm:py-24 lg:py-28">
 
-            <div className="flex flex-col gap-3 sm:flex-row">
-              <Link
-                to="/book-appointment"
-                className="inline-flex items-center justify-center rounded-xl bg-white px-6 py-3.5 text-sm font-semibold text-[var(--color-primary)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              >
-                {text.book}
-                <span className="ml-2">→</span>
-              </Link>
+        <div className="absolute -right-24 top-1/2 h-80 w-80 -translate-y-1/2 rounded-full border border-[#e5bd52]/10" />
 
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center rounded-xl border border-white/25 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
-              >
-                {text.contact}
-              </Link>
-            </div>
+        <div className="relative mx-auto max-w-5xl px-6 text-center sm:px-8">
+
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e5bd52]">
+            Need a Notary?
+          </p>
+
+          <h2 className="mx-auto mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Start With the
+            <br />
+            <span className="text-[#e5bd52]">
+              Right Service
+            </span>
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/60">
+            Choose the service that fits your needs or contact CARMO if you
+            need help understanding what your document requires.
+          </p>
+
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
+
+            <Link
+              to="/book-appointment"
+              className="group inline-flex h-12 items-center justify-center gap-4 rounded-full bg-[#e5bd52] px-8 text-sm font-semibold text-[#063525] shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#f0cf70] hover:shadow-2xl"
+            >
+              Book Appointment
+
+              <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+
+            </Link>
+
+            <Link
+              to="/contact"
+              className="group inline-flex h-12 items-center justify-center gap-3 rounded-full border border-white/30 px-8 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#063525]"
+            >
+              Contact Us
+
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+
+            </Link>
+
           </div>
+
         </div>
+
       </section>
+
     </main>
   );
-};
+}
 
 export default Services;

@@ -5,384 +5,228 @@ function Home() {
   return (
     <main className="overflow-hidden bg-[var(--color-background)]">
 
-            {/* =====================================================
-        HERO
-        ====================================================== */}
-        <section className="group relative min-h-[590px] overflow-hidden sm:min-h-[610px] lg:min-h-[625px]">
+{/* =====================================================
+    HERO
+====================================================== */}
+<section className="group relative min-h-[560px] overflow-hidden sm:min-h-[575px] lg:min-h-[590px]">
 
-        {/* Background Image */}
-        <img
-        src={homeImage}
-        alt="Justice scales and legal books"
-        className="absolute inset-0 h-full w-full scale-[1.01] object-cover object-center transition duration-[1800ms] ease-out group-hover:scale-[1.035]"
-        />
+  {/* Background Image */}
+  <img
+    src={homeImage}
+    alt="Justice scales and legal books"
+    className="absolute inset-0 h-full w-full scale-[1.01] object-cover object-center transition duration-[1800ms] ease-out group-hover:scale-[1.035]"
+  />
 
-        {/* Main Emerald Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#021c14]/95 via-[#063525]/86 to-[#063525]/32" />
+  {/* Main Emerald Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#021c14]/95 via-[#063525]/86 to-[#063525]/32" />
 
-        {/* Right Side Overlay */}
-        <div className="absolute inset-y-0 right-0 w-[42%] bg-gradient-to-l from-[#031b15]/50 to-transparent" />
+  {/* Right Side Overlay */}
+  <div className="absolute inset-y-0 right-0 w-[42%] bg-gradient-to-l from-[#031b15]/50 to-transparent" />
 
-        {/* Bottom Fade */}
-        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#021c14]/75 to-transparent" />
+  {/* Bottom Fade */}
+  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#021c14]/75 to-transparent" />
 
-        {/* Soft Decorative Glow */}
-        <div className="absolute -left-28 top-16 h-64 w-64 rounded-full bg-[#e5bd52]/8 blur-3xl" />
+  {/* Soft Decorative Glow */}
+  <div className="absolute -left-28 top-16 h-64 w-64 rounded-full bg-[#e5bd52]/8 blur-3xl" />
 
+  {/* =====================================================
+      HERO CONTENT
+  ====================================================== */}
+  <div className="relative mx-auto flex min-h-[560px] max-w-7xl items-start px-6 pt-8 sm:min-h-[575px] sm:px-8 sm:pt-10 lg:min-h-[590px] lg:px-12 lg:pt-12">
 
-        {/* =====================================================
-            HERO CONTENT
-        ====================================================== */}
-        <div className="relative mx-auto flex min-h-[590px] max-w-7xl items-start px-6 pt-16 sm:min-h-[610px] sm:px-8 sm:pt-18 lg:min-h-[625px] lg:px-12 lg:pt-[78px]">
+    {/* Main Content */}
+    <div className="max-w-[670px]">
 
-        {/* Main Content */}
-        <div className="max-w-[670px]">
+      {/* Eyebrow */}
+      <div className="mb-4 flex items-center gap-3">
 
-            {/* Eyebrow */}
-            <div className="mb-4 flex items-center gap-3">
+        <span className="h-px w-9 bg-[#e5bd52]" />
 
-            <span className="h-px w-9 bg-[#e5bd52]" />
+        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#e5bd52] sm:text-xs">
+          Trusted. Legal. Convenient.
+        </p>
 
-            <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#e5bd52] sm:text-xs">
-                Trusted. Legal. Convenient.
-            </p>
+      </div>
 
-            </div>
+      {/* Heading */}
+      <h1 className="font-serif text-[40px] font-semibold leading-[0.98] tracking-[-0.025em] text-white sm:text-[48px] lg:text-[60px]">
 
+        Your Trusted
+        <br />
 
-            {/* Heading */}
-            <h1 className="font-serif text-[40px] font-semibold leading-[0.98] tracking-[-0.025em] text-white sm:text-[48px] lg:text-[60px]">
+        Notary Partner
+        <br />
 
-            Your Trusted
-            <br />
+        in{" "}
+        <span className="relative inline-block text-[#e5bd52]">
 
-            Notary Partner
-            <br />
+          Somalia
 
-            in{" "}
-            <span className="relative inline-block text-[#e5bd52]">
+          <span className="absolute -bottom-1 left-0 h-[3px] w-[46%] rounded-full bg-[#e5bd52]/70" />
 
-                Somalia
+        </span>
 
-                <span className="absolute -bottom-1 left-0 h-[3px] w-[46%] rounded-full bg-[#e5bd52]/70" />
+      </h1>
 
-            </span>
+      {/* Description */}
+      <p className="mt-5 max-w-[610px] text-[13px] leading-6 text-white/75 sm:text-sm sm:leading-7 lg:text-[15px]">
+        At CARMO, we make notarization simple, secure, and accessible
+        for individuals and businesses. Professional service you can
+        trust, wherever you are in Somalia.
+      </p>
 
-            </h1>
+      {/* Buttons */}
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
 
+        {/* Primary Button */}
+        <Link
+          to="/book-appointment"
+          className="group/btn inline-flex h-12 items-center justify-center gap-4 rounded-full bg-[#3f806b] px-7 text-[13px] font-semibold text-white shadow-[0_10px_28px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#4b927b] hover:shadow-[0_16px_35px_rgba(0,0,0,0.25)]"
+        >
+          Book Appointment
 
-            {/* Description */}
-            <p className="mt-5 max-w-[610px] text-[13px] leading-6 text-white/75 sm:text-sm sm:leading-7 lg:text-[15px]">
-            At CARMO, we make notarization simple, secure, and accessible
-            for individuals and businesses. Professional service you can
-            trust, wherever you are in Somalia.
-            </p>
+          <span className="text-base transition-transform duration-300 group-hover/btn:translate-x-1">
+            →
+          </span>
+        </Link>
 
+        {/* Secondary Button */}
+        <Link
+          to="/about"
+          className="group/btn inline-flex h-12 items-center justify-center gap-3 rounded-full border border-white/55 bg-white/[0.02] px-7 text-[13px] font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#063525]"
+        >
+          Learn More
 
-            {/* Buttons */}
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <span className="transition-transform duration-300 group-hover/btn:translate-x-1">
+            →
+          </span>
+        </Link>
 
-            {/* Primary Button */}
-            <Link
-                to="/book-appointment"
-                className="group/btn inline-flex h-12 items-center justify-center gap-4 rounded-full bg-[#3f806b] px-7 text-[13px] font-semibold text-white shadow-[0_10px_28px_rgba(0,0,0,0.18)] transition-all duration-300 hover:-translate-y-1 hover:bg-[#4b927b] hover:shadow-[0_16px_35px_rgba(0,0,0,0.25)]"
-            >
-                Book Appointment
-
-                <span className="text-base transition-transform duration-300 group-hover/btn:translate-x-1">
-                →
-                </span>
-            </Link>
-
-
-            {/* Secondary Button */}
-            <Link
-                to="/about"
-                className="group/btn inline-flex h-12 items-center justify-center gap-3 rounded-full border border-white/55 bg-white/[0.02] px-7 text-[13px] font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white hover:bg-white hover:text-[#063525]"
-            >
-                Learn More
-
-                <span className="transition-transform duration-300 group-hover/btn:translate-x-1">
-                →
-                </span>
-            </Link>
-
-            </div>
-
-
-            {/* =====================================================
-                TRUST FEATURES
-            ====================================================== */}
-            <div className="mt-7 grid max-w-[650px] grid-cols-1 gap-4 border-t border-white/15 pt-5 sm:grid-cols-3 sm:gap-5">
-
-            {/* Feature 1 */}
-            <div className="group/feature flex items-center gap-2.5">
-
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
-
-                <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                >
-                    <path d="M12 3l8 4v5c0 4.8-3.2 7.9-8 9-4.8-1.1-8-4.2-8-9V7l8-4z" />
-                    <path d="M9 12l2 2 4-4" />
-                </svg>
-
-                </div>
-
-                <div>
-                <p className="text-[11px] font-semibold text-white sm:text-xs">
-                    Secure & Reliable
-                </p>
-
-                <p className="mt-0.5 text-[10px] text-white/50">
-                    Your documents, our priority
-                </p>
-                </div>
-
-            </div>
-
-
-            {/* Feature 2 */}
-            <div className="group/feature flex items-center gap-2.5">
-
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
-
-                <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                >
-                    <circle cx="12" cy="12" r="8" />
-                    <path d="M12 7v5l3 2" />
-                </svg>
-
-                </div>
-
-                <div>
-                <p className="text-[11px] font-semibold text-white sm:text-xs">
-                    Fast & Convenient
-                </p>
-
-                <p className="mt-0.5 text-[10px] text-white/50">
-                    Save time, get results
-                </p>
-                </div>
-
-            </div>
-
-
-            {/* Feature 3 */}
-            <div className="group/feature flex items-center gap-2.5">
-
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
-
-                <svg
-                    width="17"
-                    height="17"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                >
-                    <path d="M12 3l2.2 5.1L20 10l-5.8 1.9L12 17l-2.2-5.1L4 10l5.8-1.9L12 3z" />
-                    <path d="M19 16l.8 1.8L22 18.5l-2.2.7L19 21l-.8-1.8-2.2-.7L19 16z" />
-                </svg>
-
-                </div>
-
-                <div>
-                <p className="text-[11px] font-semibold text-white sm:text-xs">
-                    Professional Service
-                </p>
-
-                <p className="mt-0.5 text-[10px] text-white/50">
-                    For individuals & businesses
-                </p>
-                </div>
-
-            </div>
-
-            </div>
-
-        </div>
-
-
-        {/* =====================================================
-            QUOTE
-        ====================================================== */}
-        <div className="absolute right-7 top-[46%] hidden w-36 -translate-y-1/2 xl:right-12 xl:block">
-
-            <div className="mb-4 h-px w-8 bg-[#e5bd52]" />
-
-            <p className="font-serif text-[15px] italic leading-6 text-white/80">
-            “Documents today.
-            <br />
-            Greater opportunities
-            <br />
-            tomorrow.”
-            </p>
-
-            <div className="mt-4 h-[3px] w-8 bg-[#e5bd52]" />
-
-        </div>
-
-        </div>
-        </section>
-
+      </div>
 
       {/* =====================================================
-          TRUST / STATISTICS BAR
+          TRUST FEATURES
       ====================================================== */}
-      <section className="border-b border-[var(--color-border)] bg-[var(--color-background)]">
+      <div className="mt-7 grid max-w-[650px] grid-cols-1 gap-4 border-t border-white/15 pt-5 sm:grid-cols-3 sm:gap-5">
 
-        <div className="mx-auto max-w-7xl px-6 py-5 sm:px-8 lg:px-12">
+        {/* Feature 1 */}
+        <div className="group/feature flex items-center gap-2.5">
 
-          <div className="grid grid-cols-2 lg:grid-cols-4">
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
 
-            {/* Documents */}
-            <div className="group flex items-center gap-3 border-r border-[var(--color-border)] px-3 py-2 transition-transform duration-300 hover:-translate-y-1 first:pl-0 lg:px-6">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
-
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <path d="M6 2h9l4 4v16H6z" />
-                  <path d="M15 2v5h5" />
-                  <path d="M9 12h6M9 16h6" />
-                </svg>
-
-              </div>
-
-              <div>
-                <p className="font-serif text-2xl font-bold text-[var(--color-primary)]">
-                  1000+
-                </p>
-
-                <p className="text-xs text-[var(--color-text-muted)]">
-                  Documents Notarized
-                </p>
-              </div>
-
-            </div>
-
-
-            {/* Clients */}
-            <div className="group flex items-center gap-3 border-r border-[var(--color-border)] px-3 py-2 transition-transform duration-300 hover:-translate-y-1 lg:px-6">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
-
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <circle cx="9" cy="8" r="3" />
-                  <circle cx="17" cy="9" r="2.5" />
-                  <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-                  <path d="M15 14c3-.4 5.5 2 6 5" />
-                </svg>
-
-              </div>
-
-              <div>
-                <p className="font-serif text-2xl font-bold text-[var(--color-primary)]">
-                  500+
-                </p>
-
-                <p className="text-xs text-[var(--color-text-muted)]">
-                  Happy Clients
-                </p>
-              </div>
-
-            </div>
-
-
-            {/* Individuals & Businesses */}
-            <div className="group flex items-center gap-3 border-r border-[var(--color-border)] px-3 py-2 transition-transform duration-300 hover:-translate-y-1 lg:px-6">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
-
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <path d="M4 21V8l8-5 8 5v13" />
-                  <path d="M8 21v-7h8v7" />
-                  <path d="M9 10h1M14 10h1" />
-                </svg>
-
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold text-[var(--color-text)] sm:text-sm">
-                  For Individuals
-                </p>
-
-                <p className="text-xs font-semibold text-[var(--color-text)] sm:text-sm">
-                  & Businesses
-                </p>
-              </div>
-
-            </div>
-
-
-            {/* Somalia */}
-            <div className="group flex items-center gap-3 px-3 py-2 transition-transform duration-300 hover:-translate-y-1 lg:px-6 lg:pr-0">
-
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[var(--color-primary)] text-[var(--color-primary)] transition-all duration-300 group-hover:bg-[var(--color-primary)] group-hover:text-white">
-
-                <svg
-                  width="21"
-                  height="21"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <path d="M12 2c2 4 5 5 5 9 0 4-3 7-5 11-2-4-5-7-5-11 0-4 3-5 5-9z" />
-                </svg>
-
-              </div>
-
-              <div>
-                <p className="text-xs font-semibold text-[var(--color-text)] sm:text-sm">
-                  Across
-                </p>
-
-                <p className="text-xs text-[var(--color-text-muted)] sm:text-sm">
-                  Somalia
-                </p>
-              </div>
-
-            </div>
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            >
+              <path d="M12 3l8 4v5c0 4.8-3.2 7.9-8 9-4.8-1.1-8-4.2-8-9V7l8-4z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
 
           </div>
 
+          <div>
+            <p className="text-[11px] font-semibold text-white sm:text-xs">
+              Secure & Reliable
+            </p>
+
+            <p className="mt-0.5 text-[10px] text-white/50">
+              Your documents, our priority
+            </p>
+          </div>
+
         </div>
-      </section>
 
+        {/* Feature 2 */}
+        <div className="group/feature flex items-center gap-2.5">
 
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            >
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 7v5l3 2" />
+            </svg>
+
+          </div>
+
+          <div>
+            <p className="text-[11px] font-semibold text-white sm:text-xs">
+              Fast & Convenient
+            </p>
+
+            <p className="mt-0.5 text-[10px] text-white/50">
+              Save time, get results
+            </p>
+          </div>
+
+        </div>
+
+        {/* Feature 3 */}
+        <div className="group/feature flex items-center gap-2.5">
+
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#e5bd52]/80 text-[#e5bd52] transition-all duration-300 group-hover/feature:bg-[#e5bd52] group-hover/feature:text-[#063525]">
+
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+            >
+              <path d="M12 3l2.2 5.1L20 10l-5.8 1.9L12 17l-2.2-5.1L4 10l5.8-1.9L12 3z" />
+              <path d="M19 16l.8 1.8L22 18.5l-2.2-.7L19 16z" />
+            </svg>
+
+          </div>
+
+          <div>
+            <p className="text-[11px] font-semibold text-white sm:text-xs">
+              Professional Service
+            </p>
+
+            <p className="mt-0.5 text-[10px] text-white/50">
+              For individuals & businesses
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* =====================================================
+        QUOTE
+    ====================================================== */}
+    <div className="absolute right-7 top-[46%] hidden w-36 -translate-y-1/2 xl:right-12 xl:block">
+
+      <div className="mb-4 h-px w-8 bg-[#e5bd52]" />
+
+      <p className="font-serif text-[15px] italic leading-6 text-white/80">
+        “Documents today.
+        <br />
+        Greater opportunities
+        <br />
+        tomorrow.”
+      </p>
+
+      <div className="mt-4 h-[3px] w-8 bg-[#e5bd52]" />
+
+    </div>
+
+  </div>
+</section>
       {/* =====================================================
           SECTION 2 — WHY CARMO
       ====================================================== */}

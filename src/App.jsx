@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
 
-          <div className="pt-[78px]">
+          <div>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
