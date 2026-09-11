@@ -1,17 +1,39 @@
 import { createContext, useContext, useState } from "react";
+import translations from "../translations/translations";
 
 const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState(() => {
-    return localStorage.getItem("carmo-language") || "en";
-  });
+  const [language, setLanguage] = useState("en");
 
   const toggleLanguage = () => {
-    const newLanguage = language === "en" ? "so" : "en";
+    setLanguage((currentLanguage) =>
+      currentLanguage === "en" ? "so" : "en"
+    );
+  };
 
-    setLanguage(newLanguage);
-    localStorage.setItem("carmo-language", newLanguage);
+  const t = (key) => {
+    const keys = key.split(".");
+
+    let value = translations[language];
+
+    for (const item of keys) {
+      value = value?.[item];
+    }
+
+    // Haddii translation-ka la waayo,
+    // English-ka ayaa fallback noqonaya.
+    if (value === undefined) {
+      let fallback = translations.en;
+
+      for (const item of keys) {
+        fallback = fallback?.[item];
+      }
+
+      return fallback ?? key;
+    }
+
+    return value;
   };
 
   return (
@@ -20,6 +42,7 @@ export function LanguageProvider({ children }) {
         language,
         setLanguage,
         toggleLanguage,
+        t,
       }}
     >
       {children}

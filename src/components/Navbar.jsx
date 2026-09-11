@@ -60,14 +60,10 @@ function Navbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[var(--color-background)]/95 backdrop-blur-md">
       <nav className="mx-auto max-w-[1600px] pl-6 pr-2 sm:pl-8 sm:pr-3 lg:pl-10 lg:pr-3 xl:pl-12 xl:pr-4">
 
-        {/* ========================================
-            MAIN NAVBAR
-        ======================================== */}
+        {/* MAIN NAVBAR */}
         <div className="flex h-[88px] items-center">
 
-          {/* ========================================
-              LOGO
-          ======================================== */}
+          {/* LOGO */}
           <Link
             to="/"
             onClick={closeMenu}
@@ -81,9 +77,7 @@ function Navbar() {
             />
           </Link>
 
-          {/* ========================================
-              DESKTOP NAVIGATION
-          ======================================== */}
+          {/* DESKTOP NAVIGATION */}
           <div className="ml-auto mr-8 hidden items-center gap-7 lg:flex xl:mr-10 xl:gap-8">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
@@ -108,7 +102,6 @@ function Navbar() {
                 >
                   {item.name}
 
-                  {/* Active underline */}
                   <span
                     className={`
                       absolute
@@ -119,11 +112,7 @@ function Navbar() {
                       bg-[var(--color-secondary)]
                       transition-all
                       duration-300
-                      ${
-                        isActive
-                          ? "w-full"
-                          : "w-0"
-                      }
+                      ${isActive ? "w-full" : "w-0"}
                     `}
                   />
                 </NavLink>
@@ -131,9 +120,7 @@ function Navbar() {
             })}
           </div>
 
-          {/* ========================================
-              DESKTOP ACTIONS
-          ======================================== */}
+          {/* DESKTOP ACTIONS */}
           <div className="hidden shrink-0 items-center gap-3 lg:flex">
 
             {/* LANGUAGE */}
@@ -144,9 +131,10 @@ function Navbar() {
               className="
                 flex
                 h-[58px]
-                min-w-[70px]
+                min-w-[82px]
                 items-center
                 justify-center
+                gap-2
                 rounded-full
                 border
                 border-[var(--color-border)]
@@ -161,12 +149,28 @@ function Navbar() {
                 hover:text-[var(--color-primary)]
               "
             >
-              {language === "en" ? "SO" : "EN"}
+              {/* Globe Icon */}
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18" />
+                <path d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9" />
+                <path d="M12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9" />
+              </svg>
+
+              <span>{language === "en" ? "SO" : "EN"}</span>
             </button>
 
-            {/* ========================================
-                THEME SELECTOR
-            ======================================== */}
+            {/* THEME SELECTOR */}
             <div className="relative">
               <button
                 type="button"
@@ -229,9 +233,7 @@ function Navbar() {
                     <button
                       key={option.id}
                       type="button"
-                      onClick={() =>
-                        handleThemeChange(option.id)
-                      }
+                      onClick={() => handleThemeChange(option.id)}
                       className={`
                         flex
                         w-full
@@ -251,13 +253,9 @@ function Navbar() {
                         }
                       `}
                     >
-                      <span>
-                        {option.icon}
-                      </span>
+                      <span>{option.icon}</span>
 
-                      <span>
-                        {option.name}
-                      </span>
+                      <span>{option.name}</span>
 
                       {theme === option.id && (
                         <span className="ml-auto text-[var(--color-secondary)]">
@@ -270,9 +268,7 @@ function Navbar() {
               )}
             </div>
 
-            {/* ========================================
-                BOOK APPOINTMENT
-            ======================================== */}
+            {/* BOOK APPOINTMENT */}
             <Link
               to="/book-appointment"
               className="
@@ -300,20 +296,12 @@ function Navbar() {
             </Link>
           </div>
 
-          {/* ========================================
-              MOBILE MENU BUTTON
-          ======================================== */}
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
-            aria-label={
-              isMenuOpen
-                ? "Close menu"
-                : "Open menu"
-            }
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
-            onClick={() =>
-              setIsMenuOpen(!isMenuOpen)
-            }
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="
               ml-auto
               flex
@@ -363,17 +351,14 @@ function Navbar() {
           </button>
         </div>
 
-        {/* ========================================
-            MOBILE MENU
-        ======================================== */}
+        {/* MOBILE MENU */}
         {isMenuOpen && (
           <div className="border-t border-[var(--color-border)] py-5 lg:hidden">
 
             {/* MOBILE NAVIGATION */}
             <div className="flex flex-col">
               {navItems.map((item) => {
-                const isActive =
-                  location.pathname === item.path;
+                const isActive = location.pathname === item.path;
 
                 return (
                   <NavLink
@@ -407,11 +392,17 @@ function Navbar() {
               {/* LANGUAGE + THEME */}
               <div className="flex gap-3">
 
+                {/* MOBILE LANGUAGE */}
                 <button
                   type="button"
                   onClick={toggleLanguage}
+                  aria-label="Change language"
                   className="
+                    flex
                     flex-1
+                    items-center
+                    justify-center
+                    gap-2
                     rounded-lg
                     border
                     border-[var(--color-border)]
@@ -423,18 +414,35 @@ function Navbar() {
                     transition-all
                     duration-200
                     hover:border-[var(--color-secondary)]
+                    hover:bg-[var(--color-surface)]
+                    hover:text-[var(--color-primary)]
                   "
                 >
-                  {language === "en"
-                    ? "SO"
-                    : "EN"}
+                  {/* Globe Icon */}
+                  <svg
+                    width="17"
+                    height="17"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18" />
+                    <path d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9" />
+                    <path d="M12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9" />
+                  </svg>
+
+                  <span>{language === "en" ? "SO" : "EN"}</span>
                 </button>
 
+                {/* MOBILE THEME */}
                 <button
                   type="button"
-                  onClick={() =>
-                    setIsThemeOpen(!isThemeOpen)
-                  }
+                  onClick={() => setIsThemeOpen(!isThemeOpen)}
                   className="
                     flex
                     h-12
@@ -448,6 +456,7 @@ function Navbar() {
                     transition-all
                     duration-200
                     hover:border-[var(--color-secondary)]
+                    hover:bg-[var(--color-surface)]
                   "
                   aria-label="Choose theme"
                 >
@@ -471,9 +480,7 @@ function Navbar() {
                     <button
                       key={option.id}
                       type="button"
-                      onClick={() =>
-                        handleThemeChange(option.id)
-                      }
+                      onClick={() => handleThemeChange(option.id)}
                       className={`
                         flex
                         w-full
@@ -493,13 +500,9 @@ function Navbar() {
                         }
                       `}
                     >
-                      <span>
-                        {option.icon}
-                      </span>
+                      <span>{option.icon}</span>
 
-                      <span>
-                        {option.name}
-                      </span>
+                      <span>{option.name}</span>
 
                       {theme === option.id && (
                         <span className="ml-auto text-[var(--color-secondary)]">
