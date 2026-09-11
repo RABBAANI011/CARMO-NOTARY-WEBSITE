@@ -135,14 +135,14 @@ function Footer() {
                 <p className="mb-1 font-medium text-white">
                   Phone
                 </p>
-                <p>+252 XX XXX XXXX</p>
+                <p>+252 61 5368558</p>
               </div>
 
               <div>
                 <p className="mb-1 font-medium text-white">
                   Email
                 </p>
-                <p>info@carmo.so</p>
+                <p>carmo@carmo.so</p>
               </div>
 
               <div>
