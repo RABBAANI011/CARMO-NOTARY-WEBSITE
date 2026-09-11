@@ -73,7 +73,7 @@ function Navbar() {
             <img
               src={carmoLogo}
               alt="CARMO"
-              className="h-[68px] w-auto object-contain"
+              className="h-[68px] w-[68px] rounded-full object-cover border-2 border-[var(--color-secondary)] shadow-sm"
             />
           </Link>
 
@@ -433,7 +433,7 @@ function Navbar() {
                     <circle cx="12" cy="12" r="9" />
                     <path d="M3 12h18" />
                     <path d="M12 3c2.2 2.4 3.3 5.4 3.3 9s-1.1 6.6-3.3 9" />
-                    <path d="M12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6 3.3 9" />
+                    <path d="M12 3c-2.2 2.4-3.3 5.4-3.3 9s1.1 6.6-3.3 9" />
                   </svg>
 
                   <span>{language === "en" ? "SO" : "EN"}</span>

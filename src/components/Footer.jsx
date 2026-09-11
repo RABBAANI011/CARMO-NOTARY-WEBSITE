@@ -15,11 +15,14 @@ function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="inline-block">
+            <Link
+              to="/"
+              className="inline-block transition-transform duration-300 hover:scale-[1.02]"
+            >
               <img
                 src={carmoLogo}
                 alt="CARMO"
-                className="h-16 w-auto rounded-sm"
+                className="h-16 w-16 rounded-full object-cover border-2 border-[var(--color-secondary)] shadow-sm"
               />
             </Link>
 
@@ -135,6 +138,7 @@ function Footer() {
                 <p className="mb-1 font-medium text-white">
                   Phone
                 </p>
+
                 <p>+252 61 5368558</p>
               </div>
 
@@ -142,6 +146,7 @@ function Footer() {
                 <p className="mb-1 font-medium text-white">
                   Email
                 </p>
+
                 <p>carmo@carmo.so</p>
               </div>
 
@@ -149,6 +154,7 @@ function Footer() {
                 <p className="mb-1 font-medium text-white">
                   Location
                 </p>
+
                 <p>Somalia</p>
               </div>
 
